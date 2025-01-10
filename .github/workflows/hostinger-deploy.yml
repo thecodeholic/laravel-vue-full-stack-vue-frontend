@@ -24,8 +24,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd domains/gradacar.com/public_html
-            rm -rf assets index.html
+            find ~/domains/gradacar.com/public_html -mindepth 1 ! -name '.htaccess' -delete
       - name: Install SSH key inside action runner
         run: |
           mkdir -p ~/.ssh/
