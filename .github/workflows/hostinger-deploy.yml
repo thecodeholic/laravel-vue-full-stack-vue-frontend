@@ -24,7 +24,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            find ~/domains/${{ vars.WEBSITE_FOLDER }}/public_html -mindepth 1 ! -name '.htaccess' -delete
+            cd ~/domains/${{ vars.WEBSITE_FOLDER }}/public_html
+            find ~/. -mindepth 1 ! -name '.htaccess' -delete
       - name: Install SSH key inside action runner
         run: |
           mkdir -p ~/.ssh/
