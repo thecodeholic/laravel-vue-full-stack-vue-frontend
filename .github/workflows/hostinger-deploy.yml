@@ -24,4 +24,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            echo "~/domains/${{ secrets.WEBSITE_FOLDER }}/public_html"
+            echo "~/domains/${{ vars.WEBSITE_FOLDER }}/public_html"
